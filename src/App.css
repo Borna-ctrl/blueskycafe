@@ -1,0 +1,1073 @@
+@font-face {
+  font-family: 'Tan Mon Cheri';
+  src: url('/fonts/tan-mon-cheri.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('C:\Users\Borna\BlueSkyCafe\public\images\bakgrundtesting.png') repeat;
+  background-size: 900px auto;
+}
+
+
+.app {
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+
+
+.navbar {
+  background-color: #003366;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Tan Mon Cheri', serif;  
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+
+.nav-center button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  padding: 5px 0;
+  position: relative;
+}
+
+.nav-center button:hover {
+  color: #89cff0;
+}
+
+.nav-center button.active {
+  font-weight: 600;
+}
+
+.nav-center button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #89cff0;
+}
+
+.nav-center .noodles-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  color: #e67e22;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-center .noodles-button:hover {
+  color: #fff176;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+.main-hero-box {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.hero-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* nästan svart */
+    z-index: 1;
+}
+
+
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding: 0 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Viktigt för att hamna ovanpå overlayn */
+  font-size:  35px;
+}
+
+
+.hero-text-overlay h2 {
+  font-size: 6vw; /* istället för 3rem */  
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.hero-text-overlay p {
+  font-size: 4vw; /* istället för 1.5rem */ 
+   font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.hero-gallery {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.featured-box {
+  position: relative; /* Viktigt för att ::before ska placeras rätt */
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  background: url('/images/BlueSkyInside.jpg') center 70% / 100% no-repeat;
+}
+
+.featured-box::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* samma som top: 0; right: 0; bottom: 0; left: 0; */
+  background-color: rgba(0, 0, 0, 0.1); /* svart med 50% opacitet */
+  z-index: 0; /* låg z-index för att ligga bakom texten */
+}
+
+.featured-box > * {
+  position: relative;
+  z-index: 1; /* så texten hamnar ovanför overlayn */
+}
+
+.small-boxes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  height: 100%;
+  margin-top: 0;
+}
+
+/* <-- NYTT: Gör info-box till en flex-container och centrera innehållet --> */
+.info-box {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* --------------------------------------------------- */
+
+
+/* Gör så att .box-overlay täcker hela och ändrar opacity vid hover */
+.info-box .box-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* mörk overlay */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.info-box:hover .box-overlay {
+  opacity: 0.5; /* ökar opaciteten när man hovrar */
+}
+
+/* Lägg till denna istället: */
+
+.bakery-box .box-content,
+.cafe-box .box-content {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.bakery-box:hover .box-content,
+.cafe-box:hover .box-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Öppettider och TripAdvisor syns alltid, inga hover-effekter */
+.hours-box .box-content,
+.review-box .box-content {
+  transform: translateY(0);
+  opacity: 1;
+  transition: none; /* valfritt, för att ta bort transition */
+}
+
+/* Om du vill kan du även ta bort overlay-effekten på hours-box och review-box */
+/* Eller låt overlay ligga kvar men utan opacity-ändringar vid hover */
+
+.hours-box .box-overlay,
+.review-box .box-overlay {
+  opacity: 0.3; /* exempel, alltid halvtransparent overlay */
+  pointer-events: none; /* så overlay inte fångar musen */
+  transition: none;
+}
+
+.hours-box:hover .box-overlay,
+.review-box:hover .box-overlay {
+  opacity: 0.3; /* samma, ingen ändring */
+}
+
+/* Om du vill kan du göra bilden lite mindre opak också */
+.bakery-box,
+.cafe-box {
+  transition: opacity 0.5s ease;
+}
+
+.bakery-box:hover,
+.cafe-box:hover {
+  opacity: 0.8;
+}
+
+
+.cafe-box .box-content {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.cafe-box:hover .box-content {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.bakery-box .box-content {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.bakery-box:hover .box-content {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.box-overlay {
+  pointer-events: none !important;
+  background-color: rgba(255, 0, 0, 0.2); /* för visuell debug */
+}
+
+
+.box-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.hours-box {
+  background-color: #003366;
+}
+
+.bakery-box {
+  position: relative;
+  background: url('/images/NudlarBlueSky.jpg') center/cover no-repeat;
+  overflow: hidden; /* så att overlay inte sticker ut */
+}
+
+.bakery-box::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
+  background-color: rgba(0, 0, 0, 0.1); /* svart overlay, 0.4 = 40% opacity */
+  z-index: 1;
+}
+
+.bakery-box > * {
+  position: relative;
+  z-index: 2; /* se till att innehåll (text etc) hamnar ovanför overlayn */
+}
+
+.cafe-box {
+  position: relative; /* Viktigt för pseudo-elementet */
+  z-index: 0; /* Se till att innehållet är ovanför bakgrunden */
+}
+
+.cafe-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url('/images/PaniniBlueSky.jpg') center 100% / 100% no-repeat;
+  z-index: -1; /* Bakom innehållet */
+}
+
+
+.review-box {
+  background-color: #003366;
+}
+
+
+
+.review-box .box-content {
+  height: 190px; /* Testa gärna 120–150px och justera vid behov */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-section {
+  margin-top: 45px; /* Justera värdet efter behov */
+}
+
+.about-box.small-box {
+  padding: 0;
+  background: none; /* ta bort den vita gradientbakgrunden */
+}
+
+
+.about-image {
+  width: 100%;
+  height: 300px; /* Eller vilken höjd du vill ha */
+  object-fit: cover; /* Gör att bilden fyller boxen utan att förvrängas */
+}
+
+.about-box.large-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-box.large-info h3 {
+  font-size: 2.5rem; /* Gör texten större, justera efter behov */
+  font-weight: bold; /* Gör den fetare om du vill */
+  margin-bottom: 1rem; /* Lite luft under rubriken */
+}
+
+
+
+.info-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.hours-list p {
+  margin: 8px 0;
+}
+.highlight-items p,
+.husaren-items p {
+  margin: 10px 0;
+  font-size: 1.3rem;
+  color: #fff; /* eller annan ljus färg */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9); /* gör att texten "lyfts fram" */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.highlight-items p:hover,
+.husaren-items p:hover {
+  transform: scale(1.05); /* gör att texten växer lite vid hover */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9); /* starkare skugga vid hover */
+}
+
+.address {
+  font-style: italic;
+  margin-top: 15px;
+}
+/* Animation for sliding in from the right */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Starts outside the screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Ends in its original position */
+    opacity: 1;
+  }
+}
+.testimonial {
+  font-style: italic;
+  margin: 15px 0;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Animering läggs till med JS */
+.testimonial.slide-in {
+  animation: slideInRight 1.5s ease-out forwards;
+}
+
+
+.testimonial footer {
+  margin-top: 10px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+.footer {
+  background-color: #003366;
+  padding: 30px 20px;
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+
+/* Meny Section */
+.menu-section {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Större till höger, mindre till vänster */
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.large-menu-box {
+  position: relative;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.large-menu-box:hover {
+  transform: scale(1.05);
+}
+
+.small-menu-box {
+  position: relative;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.small-menu-box:hover {
+  transform: scale(1.05);
+}
+
+.menu-section {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.menu-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.menu-box {
+  flex: 1 1 45%;
+  max-width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  background-color: #fff;
+}
+
+.menu-box:hover {
+  transform: scale(1.03);
+}
+
+.menu-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+height: auto;
+
+}
+
+
+
+.section-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-container h2 {
+  font-family: 'Tan Mon Cheri', serif;
+  font-size: 2.8rem;
+  color: #003366;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.section-container h2::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: #89cff0;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* --- OM BLUE SKY SECTION --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+
+
+
+
+.about-box {
+  position: relative;
+  padding: 2rem;
+  color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f5f5f5; /* fallback if no overlay */
+}
+
+
+
+.small-box {
+  background: linear-gradient(to bottom right, #ece9e6, #ffffff);
+}
+/* Stor box till höger */
+.large-info {
+  grid-row: span 2; /* Gör så att den tar upp två rader */
+  background: #003366;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikalt centrerat innehåll */
+}
+/* Gemensamt innehåll */
+.box-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.box-content h3 {
+  margin-top: 0;
+}
+
+/* Overlay om du vill använda den */
+.box-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1); /* valfritt för "dim" effekt */
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;  /* Gör så att alla element stretchas till samma höjd */
+}
+
+/* Vänsterlåda */
+.contact-info {
+  background-color: #003366;  /* Lägg till en bakgrundsfärg för att säkerställa att området är synligt */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(255, 255, 255); /* textfärg för kontrast */
+  overflow: hidden;
+  height: 95%; /* Gör så att denna låda sträcker sig till 100% av gridhöjden */
+  font-size: 30px;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%; /* Gör att den fyller hela höjden av griden */
+  gap: 20px;
+}
+
+.contact-image-box,
+.contact-form {
+  background-color: #003366;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* CENTRERAR barn horisontellt */
+}
+
+
+
+/* Bilden centrerad */
+.contact-image-box {
+  align-items: center;
+}
+
+.contact-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Formulär */
+.contact-form h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center; /* Centrerar horisontellt */
+  align-items: center;     /* Centrerar vertikalt */
+  height: 100%;            /* Viktigt för vertikal centrering */
+  flex-direction: column;  /* Så att formfält staplas */
+}
+
+.contact-form form {
+  width: 100%;
+  max-width: 500px; /* Valfritt, för att undvika att det blir för brett */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.contact-form button {
+ 
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #90d5ff;
+  color: white;
+  cursor: pointer;
+    font-weight: 700; /* Fetstil */
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+
+
+}
+
+.contact-form button:hover {
+  background-color: #2563eb;
+}
+.contact-section {
+  height: 100vh; /* Gör så att sektionen fyller hela höjden av viewporten */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.contact-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-map-button {
+  background-color: #90d5ff;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700; /* Fetstil */
+  transition: background-color 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
+
+.contact-map-button:hover {
+  background-color: #005299;
+}
+
+
+
+.noodles-section {
+  background: #ffffffcc;
+  padding: 3rem 1rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.noodles-section .section-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.noodles-section h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.noodles-section .subtitle {
+  text-align: center;
+  color: #e67e22;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.noodles-section .description {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.steps details {
+  background-color: #ffffffcc; /* Samma som contact-image-box */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.steps details:hover {
+  transform: scale(1.02);
+  background-color: #f4f4f4; /* subtil hover-effekt */
+}
+
+.steps summary {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #003366; /* Samma färg som rubriker */
+  font-family: 'Tan Mon Cheri', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.steps details[open] {
+  background-color: #eef7fa;
+  border-color: #bce0ee;
+}
+
+.steps p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hero-scroll-button {
+  margin-top: 1rem;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-scroll-button:hover {
+  background-color: #005fa3;
+}
+
+
+.to-noodles-button {
+  margin-top: -1rem;
+  padding: 1rem 2rem; /* Mer utrymme inuti knappen */
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem; /* Större text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.to-noodles-button:hover {
+  background-color: #005fa3;
+}
+
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #003366;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  font-family: 'Tan Mon Cheri', sans-serif;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 1024px) {
+  .hero-main-image {
+    object-position: center center;
+  }
+
+  .hero-text-overlay h2 {
+    font-size: 5vw;
+  }
+  
+  .hero-text-overlay p {
+    font-size: 3vw;
+  }
+
+  .hero-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .small-boxes-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+  }
+
+  .featured-box {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-center {
+    gap: 15px;
+  }
+
+  .nav-center button {
+    font-size: 0.9rem;
+    padding: 4px 0;
+  }
+
+  .nav-center .noodles-button {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+
+  .hero-main-image {
+    height: 70vh;
+    min-height: 300px;
+  }
+
+  .hero-text-overlay h2 {
+    font-size: 7vw;
+  }
+  
+  .hero-text-overlay p {
+    font-size: 5vw;
+  }
+
+  .hero-gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-box,
+  .small-boxes-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .small-boxes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+  }
+
+  .about-section {
+    font-size: 1rem;
+    padding: 15px 10px;
+    margin-top: 30px;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-center button {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .nav-center .noodles-button {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  .hero-main-image {
+       height: 60vh;
+    min-height: 250px;
+  }
+
+  .hero-text-overlay h2 {
+    font-size: 8vw;
+  }
+  
+  .hero-text-overlay p {
+    font-size: 6vw;
+  }
+
+  .hero-gallery {
+    display: block;
+  }
+
+  .featured-box {
+    height: 250px;
+    margin-bottom: 15px;
+  }
+
+  .small-boxes-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .about-section {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+
+
