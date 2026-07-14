@@ -56,7 +56,7 @@ if (loading) {
   return (
     <div className="loading-screen">
       <div className="loading-spinner">
-        <img src="/images/noodle-bowl-icon.png" alt="Loading" />
+        <img src="/blueskycafe/images/noodle-bowl-icon.png" alt="Loading" />
         <p>Laddar Blue Sky...</p>
       </div>
     </div>
@@ -88,7 +88,7 @@ if (loading) {
           <section className="hero">
          <div className="main-hero-box">
     <div className="hero-dark-overlay"></div> {/* Lägg till denna */}
-    <img src="/images/BlueSkyFront.jpg" alt="BlueSkyFront" className="hero-main-image" />
+    <img src="/blueskycafe/images/BlueSkyFront.jpg" alt="BlueSkyFront" className="hero-main-image" />
     <div className="hero-text-overlay">
       <h1>Välkommen till Blue Sky Nudelkafé</h1>
       <button 
@@ -157,10 +157,10 @@ if (loading) {
               <h2>Vår Meny</h2>
               <div className="menu-boxes">
                 <div className="menu-box">
-                  <img src="/images/StudentMeny.jpg" alt="Meny 1" className="menu-image" />
+                  <img src="/blueskycafe/images/StudentMeny.jpg" alt="Meny 1" className="menu-image" />
                 </div>
                 <div className="menu-box">
-                  <img src="/images/Meny.jpg" alt="Meny 2" className="menu-image" />
+                  <img src="/blueskycafe/images/Meny.jpg" alt="Meny 2" className="menu-image" />
                 </div>
               </div>
             </div>
@@ -218,7 +218,7 @@ if (loading) {
       <div className="about-grid">
         {/* Box 1: ersätt "Vår Historia" med en bild */}
         <div className="about-box small-box">
-          <img src="/images/BlueskyÖver.jpg" alt="Vår historia" className="about-image" />
+          <img src="/blueskycafe/images/BlueskyÖver.jpg" alt="Vår historia" className="about-image" />
         </div>
 
         {/* Box 2: behåll personaltexten som den är */}
@@ -239,7 +239,7 @@ if (loading) {
 
         {/* Box 3: ersätt "Blue Sky – mer än ett café" med en bild */}
         <div className="about-box small-box">
-          <img src="/images/BlueskyUnder.jpg" alt="Blue Sky – mer än ett café" className="about-image" />
+          <img src="/blueskycafe/images/BlueskyUnder.jpg" alt="Blue Sky – mer än ett café" className="about-image" />
         </div>
       </div>
     </div>
@@ -270,7 +270,7 @@ if (loading) {
                   <div className="contact-image-box">
                     <div className="contact-image-wrapper">
                       <img 
-                        src="/images/BlueSkyCafe.PNG" 
+                        src="/blueskycafe/images/BlueSkyCafe.PNG" 
                         alt="Café interiör" 
                         className="contact-image"
                       />

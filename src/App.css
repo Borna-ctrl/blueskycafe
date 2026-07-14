@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Tan Mon Cheri';
-  src: url('/fonts/tan-mon-cheri.ttf') format('truetype'); 
+  src: url('/blueskycafe/fonts/tan-mon-cheri.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
@@ -10,7 +10,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-              url('C:\Users\Borna\BlueSkyCafe\public\images\bakgrundtesting.png') repeat;
+              url('/blueskycafe/images/bakgrundtesting.png') repeat;
   background-size: 900px auto;
 }
 
@@ -188,7 +188,7 @@ html, body {
   justify-content: center;
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  background: url('/images/BlueSkyInside.jpg') center 70% / 100% no-repeat;
+  background: url('/blueskycafe/images/BlueSkyInside.jpg') center 70% / 100% no-repeat;
 }
 
 .featured-box::before {
@@ -331,7 +331,7 @@ html, body {
 
 .bakery-box {
   position: relative;
-  background: url('/images/NudlarBlueSky.jpg') center/cover no-repeat;
+  background: url('/blueskycafe/images/NudlarBlueSky.jpg') center/cover no-repeat;
   overflow: hidden; /* så att overlay inte sticker ut */
 }
 
@@ -359,7 +359,7 @@ html, body {
   top: 0; left: 0; right: 0; bottom: 0;
   background:
     linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url('/images/PaniniBlueSky.jpg') center 100% / 100% no-repeat;
+    url('/blueskycafe/images/PaniniBlueSky.jpg') center 100% / 100% no-repeat;
   z-index: -1; /* Bakom innehållet */
 }
 
